@@ -6,9 +6,14 @@
   </head>
   <body>
     <h1>Welcome to my personal website!</h1>
+    
+    <p>To learn more about me, visit my <a href="bio.html">Bio Page</a>.</p>
+    
+    <p><em>${message}</em></p>
+    
     <p>To connect with me, enter your name and email address below</p>
     
-    <form action="connect" >
+    <form action="connect" method="post">
     
       <label for="firstName">First Name: </label>
       <input name="firstName" value="${user.firstName}"><br>
