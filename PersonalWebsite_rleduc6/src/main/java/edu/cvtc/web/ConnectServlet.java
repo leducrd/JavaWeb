@@ -30,11 +30,13 @@ public class ConnectServlet extends HttpServlet {
 		if (firstName != null && !firstName.isEmpty()
 				&& lastName != null && !lastName.isEmpty()
 				&& email !=null && !email.isEmpty()) {
+			
 			//TODO: Insert the new User into the connection database.
+			System.out.println("A new user should be added to the database...");
 			
 		} else { // did not pass validation
 			
-			target = "/index.jsp";
+			target = "/contact.jsp";
 			final String message = "Please completely fill out the form.";
 			request.setAttribute("message", message);
 			
