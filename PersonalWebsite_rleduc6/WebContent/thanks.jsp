@@ -6,16 +6,17 @@
   </head>
   <body>
     <header>
-    	<nav>
-    	  <ul>
-    	    <li><a href="index.jsp">Home</a></li>
-    	    <li><a href="bio.html">Bio</a></li>
-    	    <li><a href="contact.jsp">Contact Me</a></li>
-    	  </ul>
-    	</nav>
+      <h1>Ryan LeDuc</h1>
+      <nav>
+        <ul>
+    	  <li><a href="index.jsp">Home</a></li>
+    	  <li><a href="bio.html">Bio</a></li>
+    	  <li><a href="contact.jsp">Contact Me</a></li>
+    	</ul>
+      </nav>
     </header>
     <main>
-      <h1>Thanks for connecting with me!</h1>
+      <h2>Thanks for connecting with me!</h2>
     
       <p>Thank you, ${user.firstName} ${user.lastName}. I will contact you soon at: ${user.email}.</p>
     
