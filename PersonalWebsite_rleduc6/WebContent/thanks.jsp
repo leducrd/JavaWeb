@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  	<title>Ryan LeDuc - Contact</title>
+  	<title>Ryan LeDuc - Thanks</title>
   	<link rel="stylesheet" href="styles/main.css" type="text/css">
   </head>
   <body>
@@ -21,5 +21,8 @@
     
       <p>You should check out my <a href="bio.html">Bio Page</a> or, return to my <a href=".">Home Page</a>.</p>
     </main>
+    <footer>
+      <small>Copyright &copy;1988-2017 Ryan LeDuc</small>
+    </footer>
   </body>
 </html>

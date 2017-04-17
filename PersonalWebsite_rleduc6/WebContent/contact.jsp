@@ -17,11 +17,13 @@
     <main>
       <h1>Contact me!</h1>
     
-      <p>To learn more about me, visit my <a href="bio.html">Bio Page</a>.</p>
+      <p>I can always be fund at rleduc6@student.cvtc.edu</p>
+      
+      <p>OR</p>
     
+      <p>To connect with me, enter your name and email address below and I will contact you as soon as possible.</p>
+      
       <p><em>${message}</em></p>
-    
-      <p>To connect with me, enter your name and email address below</p>
     
       <form action="connect" method="post">
     
@@ -38,5 +40,8 @@
       
       </form>
     </main>
+    <footer>
+      <small>Copyright &copy;1988-2017 Ryan LeDuc</small>
+    </footer>
   </body>
 </html>
