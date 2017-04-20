@@ -1,0 +1,1 @@
+<footer class="hero-unit">&copy; Copyright 2017 Ryan LeDuc</footer>
