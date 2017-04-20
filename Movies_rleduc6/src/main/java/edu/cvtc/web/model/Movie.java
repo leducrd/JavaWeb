@@ -51,7 +51,4 @@ public class Movie implements Serializable {
 		this.lengthInMinutes = lengthInMinutes;
 	}
 	
-	
-	
-	
 }
