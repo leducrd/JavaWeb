@@ -17,9 +17,7 @@
 <%@ include file="includes/navigation.jsp" %>
         
         <div class="container">
-          <p> Thank you for making the commitment to be in class everyday as
-          we cover the competencies you will need to demonstrate in order to
-          be a Java Web Programmer in out industry</p>
+          <p>Thanks for visiting MovieListr! Click on "View Movies" in the navigation above to view all the movies in our database.</p>
         </div>
 <%@ include file="includes/footer.jsp" %>
       </div>
