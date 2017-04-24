@@ -23,7 +23,7 @@ import edu.cvtc.web.model.Movie;
  */
 public class WorkbookUtility {
 
-	public static final String INPUT_FILE = "/assets/Movies.xlsx";
+	public static final String INPUT_FILE = "/assets/movies.xlsx";
 	
 	public static List<Movie> retrieveMoviesFromWorkbook(final File inputFile) throws InvalidFormatException, IOException {
 		
