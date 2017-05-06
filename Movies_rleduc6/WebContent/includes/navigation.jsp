@@ -8,5 +8,6 @@
                 <li><a href="ViewAll?sortType=title">By Title</a></li>
               </ul>
           </li>
+          <li><a href="search.jsp">Search</a></li>
           </ul>
         </nav>
