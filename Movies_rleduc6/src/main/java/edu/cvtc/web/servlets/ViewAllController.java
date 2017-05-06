@@ -2,6 +2,7 @@ package edu.cvtc.web.servlets;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
+import edu.cvtc.web.comparators.TitleComparator;
 import edu.cvtc.web.model.Movie;
 import edu.cvtc.web.util.WorkbookUtility;
 
@@ -35,6 +37,13 @@ public class ViewAllController extends HttpServlet {
 			final File inputFile = new File(filepath);
 			final List<Movie> movies = WorkbookUtility.retrieveMoviesFromWorkbook(inputFile);
 			
+			final String sortType = request.getParameter("sortType");
+			
+			if ( null != sortType) {
+				
+				sort(movies, sortType);
+			}
+			
 			request.setAttribute("movies", movies);
 			target = "view-all.jsp";
 			
@@ -56,6 +65,20 @@ public class ViewAllController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+	}
+	
+	private void sort(final List<Movie> movies, final String sortType) {
+		
+		switch(sortType) {
+		
+		case "title":
+			Collections.sort(movies, new TitleComparator());
+			break;
+			
+		default:
+			break;
+		}
+		
 	}
 
 }
