@@ -18,7 +18,7 @@ public class DBUtility {
 	
 	public static final String DRIVER_NAME = "org.sqlite.JDBC";
 	
-	public static final String CONNECTION = "jdbc:sqlite.movie.db";
+	public static final String CONNECTION = "jdbc:sqlite:movie.db";
 	
 	public static Connection createConnection() throws ClassNotFoundException, SQLException {
 		
