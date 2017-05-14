@@ -9,6 +9,7 @@
               </ul>
           </li>
           <li><a href="search.jsp">Search</a></li>
+          <li><a href="addMovie.jsp">Add Movie</a></li>
           <li><a href="populateDatabase.jsp">Populate Database</a></li>
           </ul>
         </nav>
