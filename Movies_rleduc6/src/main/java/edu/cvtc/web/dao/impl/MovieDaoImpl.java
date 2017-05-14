@@ -6,6 +6,7 @@ package edu.cvtc.web.dao.impl;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -115,8 +116,36 @@ public class MovieDaoImpl implements MovieDao {
 	}
 
 	@Override
-	public void insertMovie(Movie movie) {
-		// TODO Auto-generated method stub
+	public void insertMovie(Movie movie) throws MovieDaoException {
+		
+		Connection connection = null;
+		
+		PreparedStatement insertStatement = null;
+		
+		try {
+			connection = DBUtility.createConnection();
+			
+			final String sqlStatement = "INSERT INTO movie (title, director, lengthInMinutes) values (?,?,?);";
+			
+			insertStatement = connection.prepareStatement(sqlStatement);
+			
+			insertStatement.setString(1, movie.getTitle());
+			insertStatement.setString(2, movie.getDirector());
+			insertStatement.setInt(3, movie.getLengthInMinutes());
+			
+			insertStatement.setQueryTimeout(DBUtility.TIMEOUT);
+			
+			insertStatement.executeUpdate();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+
+			e.printStackTrace();
+			
+			throw new MovieDaoException("Error: Unable to insert movie into database.");
+		} finally {
+			DBUtility.closeConnections(connection, insertStatement);
+		}
+		
 
 	}
 

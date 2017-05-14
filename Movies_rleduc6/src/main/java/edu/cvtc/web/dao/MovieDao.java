@@ -18,5 +18,5 @@ public interface MovieDao {
 
 	List<Movie> retrieveMovies() throws MovieDaoException;
 	
-	void insertMovie(Movie movie);
+	void insertMovie(Movie movie) throws MovieDaoException;
 }
