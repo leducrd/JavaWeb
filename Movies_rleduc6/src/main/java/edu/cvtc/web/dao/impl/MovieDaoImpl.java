@@ -137,6 +137,7 @@ public class MovieDaoImpl implements MovieDao {
 			
 			insertStatement.executeUpdate();
 			
+			// because
 		} catch (ClassNotFoundException | SQLException e) {
 
 			e.printStackTrace();
