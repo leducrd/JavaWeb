@@ -1,6 +1,5 @@
 package edu.cvtc.web.servlets;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
@@ -11,14 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-
 import edu.cvtc.web.comparators.TitleComparator;
 import edu.cvtc.web.dao.MovieDao;
 import edu.cvtc.web.dao.impl.MovieDaoException;
 import edu.cvtc.web.dao.impl.MovieDaoImpl;
 import edu.cvtc.web.model.Movie;
-import edu.cvtc.web.util.WorkbookUtility;
 
 /**
  * Servlet implementation class ViewAllController
