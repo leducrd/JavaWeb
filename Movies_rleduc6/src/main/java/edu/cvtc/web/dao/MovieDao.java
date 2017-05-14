@@ -16,7 +16,7 @@ public interface MovieDao {
 	
 	void populate(String filepath) throws MovieDaoException;
 
-	List<Movie> retrieveMovies();
+	List<Movie> retrieveMovies() throws MovieDaoException;
 	
 	void insertMovie(Movie movie);
 }

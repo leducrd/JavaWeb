@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
 import edu.cvtc.web.comparators.TitleComparator;
+import edu.cvtc.web.dao.MovieDao;
+import edu.cvtc.web.dao.impl.MovieDaoException;
+import edu.cvtc.web.dao.impl.MovieDaoImpl;
 import edu.cvtc.web.model.Movie;
 import edu.cvtc.web.util.WorkbookUtility;
 
@@ -33,9 +36,8 @@ public class ViewAllController extends HttpServlet {
 		
 		try {
 			
-			final String filepath = getServletContext().getRealPath(WorkbookUtility.INPUT_FILE);
-			final File inputFile = new File(filepath);
-			final List<Movie> movies = WorkbookUtility.retrieveMoviesFromWorkbook(inputFile);
+			final MovieDao movieDao = new MovieDaoImpl();
+			final List<Movie> movies = movieDao.retrieveMovies();
 			
 			final String sortType = request.getParameter("sortType");
 			
@@ -47,7 +49,7 @@ public class ViewAllController extends HttpServlet {
 			request.setAttribute("movies", movies);
 			target = "view-all.jsp";
 			
-		} catch(InvalidFormatException e) {
+		} catch(MovieDaoException e) {
 			
 			e.printStackTrace();
 
