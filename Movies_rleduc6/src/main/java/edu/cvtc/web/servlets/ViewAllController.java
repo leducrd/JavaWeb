@@ -41,6 +41,7 @@ public class ViewAllController extends HttpServlet {
 				sort(movies, sortType);
 			}
 			
+			request.setAttribute("viewType", sortType);
 			request.setAttribute("movies", movies);
 			target = "view-all.jsp";
 			

@@ -1,9 +1,21 @@
 /*!
  * JavaWebProgramming v1
  *
- * Copyright 2013 George Andrews
+ * Copyright 2017 Ryan LeDuc
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  */
+ 
+ @import url('https://fonts.googleapis.com/css?family=Barrio');
+ 
  .container {width:1000px;}
+ 
+ h1 {
+ 	font-family: 'Barrio', cursive;
+ 	margin-bottom: 0px;
+ }
+ 
+ .hero-unit > p {
+ 	margin-left: 2rem;
+ }

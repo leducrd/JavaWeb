@@ -12,10 +12,10 @@
       
       <div class="hero-unit">
         
-        <h1>Add Movie</h1>
+        <h1>MovieListr</h1>
         
 <%@ include file="includes/navigation.jsp" %>
-        
+        <h2>Add Movie</h2>
         <div class="container">
           <form action="AddMovie" method="post">
             <label for="title"><strong>Title: </strong></label>

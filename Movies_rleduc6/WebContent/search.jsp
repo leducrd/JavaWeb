@@ -12,14 +12,17 @@
       
       <div class="hero-unit">
         
-        <h1>MovieListr: Search</h1>
+        <h1>MovieListr</h1>
         
 <%@ include file="includes/navigation.jsp" %>
-        
+        <h2>Search</h2>
         <div class="container">
           <form action="Search" method="post">
-            <label for="title"><strong>Search by title: </strong></label>
-            <input name="title">
+          	<p>Select a search type:</p>
+          	<p><input type="radio" name="searchType" value="title"> Title</p>
+          	<p><input type="radio" name="searchType" value="director"> Director</p>
+            <label for="searchString"><strong>Search: </strong></label>
+            <input name="searchString">
             <input type="submit" value="Search!">
           </form>
         </div>

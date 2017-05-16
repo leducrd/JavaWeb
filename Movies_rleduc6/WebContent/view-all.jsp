@@ -13,24 +13,51 @@
       
       <div class="hero-unit">
         
-        <h1>Welcome to MovieListr</h1>
+        <h1>MovieListr</h1>
+        <p>Movies listed and waiting for you....</p>
         
 <%@ include file="includes/navigation.jsp" %>
         
         <div class="container">
-          <c:choose>
+        	<c:choose>
+	        	<c:when test="${search}">
+	        		<p>Search Criteria:</p>
+	        		<p>Search Type: ${searchType}</p>
+	        		<p>Search Phrase: ${searchString}</p>
+	        		
+	        		<h3>Search Results</h3>
+	        		<hr>
+	        	</c:when>
+	        	
+	        	<c:when test="${viewType == null}">
+	        		<h3>View All: Unsorted</h3>
+	        		<hr>
+	        	</c:when>
+	        	
+	        	<c:when test="${viewType == 'title'}">
+	        		<h3>View All: By Title</h3>
+	        		<hr>
+	        	</c:when>
+	        	
+	        	<c:when test="${viewType == 'length'}">
+	        		<h3>View All: Length Ascending</h3>
+	        		<hr>
+	        	</c:when>
+        	</c:choose>
+        	
+           <c:choose>
           
-            <c:when test="${empty movies}">
-              <p>Sorry, there are no movies listed</p>
-            </c:when>
-            <c:otherwise>
-              <c:forEach var="movie" items="${movies}">
-                <div class="span4">
-                  <h3>${movie.title}</h3>
-                  <p>Director: ${movie.director} | Length: ${movie.lengthInMinutes}</p>
-                </div>
-              </c:forEach>
-            </c:otherwise>
+             <c:when test="${empty movies}">
+               <p>Sorry, there are no movies listed</p>
+             </c:when>
+             <c:otherwise>
+               <c:forEach var="movie" items="${movies}">
+                 <div class="span4">
+                   <h3>${movie.title}</h3>
+                   <p>Director: ${movie.director} | Length: ${movie.lengthInMinutes}</p>
+                 </div>
+               </c:forEach>
+             </c:otherwise>
  
           </c:choose>
           

@@ -1,6 +1,7 @@
 package edu.cvtc.web.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,12 +34,33 @@ public class SearchController extends HttpServlet {
 			
 			final MovieDao movieDao = new MovieDaoImpl();
 			final List<Movie> movies = movieDao.retrieveMovies();
+			List<Movie> filteredMovies = new ArrayList<>();
 			
-			final String title = request.getParameter("title");
+			//final String title = request.getParameter("title");
 			
-			final List<Movie> filteredMovies = movies.stream()
-					.filter((movie) -> movie.getTitle().equalsIgnoreCase(title)).collect(Collectors.toList());
+			final String searchType = request.getParameter("searchType");
+			final String searchString = request.getParameter("searchString");
 			
+			switch (searchType) {
+			
+			case "title":
+				filteredMovies = movies.stream()
+				.filter((movie) -> movie.getTitle().toLowerCase().contains(searchString.toLowerCase())).collect(Collectors.toList());
+				break;
+				
+			case "director":
+				filteredMovies = movies.stream()
+				.filter((movie) -> movie.getDirector().toLowerCase().contains(searchString.toLowerCase())).collect(Collectors.toList());
+				break;
+				
+			default:
+				break;
+				
+			}
+			
+			request.setAttribute("search", true);
+			request.setAttribute("searchType", searchType);
+			request.setAttribute("searchString", searchString);
 			request.setAttribute("movies", filteredMovies);
 			
 			target = "view-all.jsp";

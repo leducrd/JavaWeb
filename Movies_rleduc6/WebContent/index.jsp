@@ -12,7 +12,8 @@
       
       <div class="hero-unit">
         
-        <h1>Welcome to MovieListr</h1>
+        <h1>MovieListr</h1>
+        <p>Movies listed and waiting for you....</p>
         
 <%@ include file="includes/navigation.jsp" %>
         

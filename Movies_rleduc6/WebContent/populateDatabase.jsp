@@ -13,10 +13,10 @@
       
       <div class="hero-unit">
         
-        <h1>Populate Database</h1>
+        <h1>MovieListr</h1>
         
 <%@ include file="includes/navigation.jsp" %>
-        
+        <h2>Populate Database</h2>
         <div class="container">
           <form action="PopulateDatabase" method="post">
           	<p>Click on the populate button to populate the person database.</p>
