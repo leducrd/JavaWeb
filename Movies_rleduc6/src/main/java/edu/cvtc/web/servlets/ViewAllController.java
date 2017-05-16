@@ -70,7 +70,11 @@ public class ViewAllController extends HttpServlet {
 		switch(sortType) {
 		
 		case "title":
-			Collections.sort(movies, new TitleComparator());
+			Collections.sort(movies, (m1, m2) -> m1.getTitle().compareTo(m2.getTitle()));
+			break;
+		
+		case "length":
+			Collections.sort(movies, (m1, m2) -> m1.getLengthInMinutes().compareTo(m2.getLengthInMinutes()));
 			break;
 			
 		default:

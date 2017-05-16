@@ -96,7 +96,7 @@ public class MovieDaoImpl implements MovieDao {
 				
 				final String title = resultSet.getString("title");
 				final String director = resultSet.getString("director");
-				final int lengthInMinutes = resultSet.getInt("lengthInMinutes");
+				final Integer lengthInMinutes = resultSet.getInt("lengthInMinutes");
 				
 				movies.add(new Movie(title, director, lengthInMinutes));
 				
