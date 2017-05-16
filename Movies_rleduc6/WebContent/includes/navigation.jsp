@@ -6,6 +6,7 @@
               <ul class="dropdown-menu">
                 <li><a href="ViewAll">Unsorted</a></li>
                 <li><a href="ViewAll?sortType=title">By Title</a></li>
+                <li><a href="ViewAll?sortType=length">By Length Ascending</a></li>
               </ul>
           </li>
           <li><a href="search.jsp">Search</a></li>

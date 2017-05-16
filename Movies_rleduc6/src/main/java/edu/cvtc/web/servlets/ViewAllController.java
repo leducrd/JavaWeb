@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import edu.cvtc.web.comparators.TitleComparator;
 import edu.cvtc.web.dao.MovieDao;
 import edu.cvtc.web.dao.impl.MovieDaoException;
 import edu.cvtc.web.dao.impl.MovieDaoImpl;
