@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import edu.cvtc.web.dao.impl.UserIO;
+import edu.cvtc.web.model.User;
+
 /**
  * Servlet implementation class RegisterUserController
  */
@@ -48,28 +51,20 @@ public class RegisterUserController extends HttpServlet {
 		final String firstName = request.getParameter("firstName");
 		final String lastName = request.getParameter("lastName");
 		
+		final User user = new User(firstName, lastName, email);
+		
+		final String path = getServletContext().getRealPath("/WEB-INF/EmailList.txt");
+		UserIO.add(user, path);
+		
+		final HttpSession session = request.getSession();
+		session.setAttribute("user", user);
+		session.setAttribute("registered", true);
+		
+		final Cookie c = new Cookie("emailCookie", email);
+		c.setMaxAge(60 * 60 *24 * 365 * 2);
+		c.setPath("/");
+		response.addCookie(c);
 		
 	}
-	
-//private void registerUser(final HttpServletRequest request, final HttpServletResponse response) {
-//		
-//		final String email = request.getParameter("email");
-//		final String firstName = request.getParameter("firstName");
-//		final String lastName = request.getParameter("lastName");
-//		
-//		final User user = new User(firstName, lastName, email);
-//		
-//		final String path = getServletContext().getRealPath("/WEB-INF/EmailList.txt");
-//		UserIO.add(user, path);
-//		
-//		final HttpSession session = request.getSession();
-//		session.setAttribute("user", user);
-//		session.setAttribute("registered", true);
-//		
-//		final Cookie c = new Cookie("emailCookie", email);
-//		c.setMaxAge(60 * 60 *24 * 365 * 2);
-//		c.setPath("/");
-//		response.addCookie(c);
-//	}
 
 }
