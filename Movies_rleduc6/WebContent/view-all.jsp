@@ -14,19 +14,18 @@
       <div class="hero-unit">
         
         <h1>MovieListr</h1>
-        <p>Movies listed and waiting for you....</p>
         
 <%@ include file="includes/navigation.jsp" %>
         
         <div class="container">
         	<c:choose>
 	        	<c:when test="${search}">
-	        		<p>Search Criteria:</p>
-	        		<p>Search Type: ${searchType}</p>
-	        		<p>Search Phrase: ${searchString}</p>
 	        		
+	        		<p><b>Search Criteria:</b></p>
+	        		<p><b>Type:</b> ${searchType} | <b>Phrase:</b> ${searchString}</p>
 	        		<h3>Search Results</h3>
 	        		<hr>
+	        		
 	        	</c:when>
 	        	
 	        	<c:when test="${viewType == null}">
@@ -53,7 +52,7 @@
              <c:otherwise>
                <c:forEach var="movie" items="${movies}">
                  <div class="span4">
-                   <h3>${movie.title}</h3>
+                   <h4>${movie.title}</h4>
                    <p>Director: ${movie.director} | Length: ${movie.lengthInMinutes}</p>
                  </div>
                </c:forEach>
