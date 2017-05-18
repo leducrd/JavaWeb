@@ -19,10 +19,10 @@
         <div class="container">
           <form action="Search" method="post">
           	<p>Select a search type:</p>
-          	<p><input type="radio" name="searchType" value="title"> Title</p>
+          	<p><input type="radio" name="searchType" value="title" required> Title</p>
           	<p><input type="radio" name="searchType" value="director"> Director</p>
             <label for="searchString"><strong>Search: </strong></label>
-            <input name="searchString">
+            <input name="searchString" required>
             <input type="submit" value="Search!">
           </form>
         </div>
